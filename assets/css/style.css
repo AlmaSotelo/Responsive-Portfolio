@@ -1,0 +1,369 @@
+body {
+    /* required by instruccions */    
+    font-family:Arial,Helvetica-Neue,Helvetica,sans-serif;
+    /* to get rid of the default margins */
+    margin:0px;
+    background-image: url("../images/gravel.png");
+ }
+
+ header {
+    /* to ensure it covers the entire width of the <body> */
+    width:100%;
+    /* to get rid of the default top margin */
+    margin-top:0px;
+    /* required by instruccions */    
+    background-color: #ffffff;
+    border-bottom: 2px solid #cccccc;    
+   /* to acomodate layout aparience*/
+    height: 70px; 
+       
+ }
+
+ #name {
+     /* required by instruccions */   
+    background-color:#4aaaa5;
+    font-family: Georgia,Times,Times,New-Roman,serif;
+    color:#ffffff;
+     /* to acomodate layout aparience */
+    width:250px;
+    height: 70px;
+    text-align: center;
+     /* to make room for #clickables */  
+    float:left;
+    /* preparing relation to ancestor position to give a determined position */
+    position:relative;
+    /* position given */
+   /* using % ensure visibility when changes in the viwerport */  
+    /* preparing to add padding and no moving the given height */
+    box-sizing: border-box;
+    /* pushing the letters up */
+    left:25%;
+ }
+
+ #clickables {
+      margin:0;
+      width:300px;
+    /* required by instruccions */ 
+      color:#777777;
+      /* to prepare it for top and right positions */      
+      position:relative;
+      /* given position */
+      top:25px;
+      right:20%; /* using % ensure visibility when changes in the viwerport */  
+      float:right;
+    }
+
+    a { 
+        /* per model */
+        color:#777777;
+        /* to get rid of default underline */
+        text-decoration:none;
+        /* to take position at the right of each vertical bar */
+        float:right;
+        /* to center ir vertically */
+        padding:4px 20px;
+        
+ }
+    .separators {
+        color:gray;
+        height:32px;
+        width:1px;
+        /* to take position at the right */
+        float:right;
+
+ /* ------- below the header ------ */
+ }
+
+ /* Background pattern from Toptal Subtle Patterns */
+
+ #container {
+    /* required by instruccions */
+    background-color: #ffffff;
+    border:2px solid #dddddd;
+    color: #777777;
+    width:55%;
+    /* put it at center position (hor & ver) in relation to <body> */
+    margin-left:25%;
+    /* preparing to add padding without moving the given size */
+    box-sizing: border-box;         
+    /* given size to get aparience closer to the model */
+    height: 600px;    
+    /* it is needed to put it in front of pattern but I don't yet understand why */
+    position:relative;
+    /* to have space between the border and the inside contain */
+    padding:0px 20px 0px 30px;
+    /* to make it farther from the header and the footer */
+    margin-top:30px;
+    margin-bottom:30px;    
+ } 
+ 
+
+ #title {
+    /* to reset the precedent flowing */
+    clear:both;
+    /* text color required by instruccions */    
+    color:#4aaaa5;
+    /* for the aparience */
+    line-height: 20px; 
+ }
+
+ #picture {
+    /* to make room for <p> in the same line */
+    float:left;
+    /* to separate it from <p> */
+    margin-right: 20px;
+ }
+
+ /* for the aparience */
+ p {
+   line-height: 30px;
+ }
+
+ footer {
+    
+    /* to ensure it covers the entire width of the <body> */
+    width:100%;   
+     /* required by instruccions */ 
+    background-color: #666666;
+    border-top:5px solid #4aaaa5; 
+     /* for aparience */ 
+    text-align: center;
+    color:#dddddd;
+    font-size:10px;
+    padding-top:40px;
+    padding-bottom:10px;       
+ }      
+ /* for the elements inside the form */
+ form {
+    box-sizing: border-box;
+    display:block;
+    margin-top:0em;
+    width:100%;
+    line-height: 30px;
+    font-size: 20px;
+    padding-top:10px;
+    color:#363536e5;
+
+ }
+
+ .inputbox {
+    font-size:16px;
+    width: 100%;
+    color:#363536e5;
+ }
+ 
+ #messagebox {
+     width:100%;
+     height:250px;
+     color:#363536e5;
+}
+
+ #submitbutton {
+    border:1px solid #666666;
+    color:#dddddd;
+    font-size:16px;
+    background-color: #4aaaa5;
+    width:100px;
+    height:30px;
+    margin-top:20px;
+ }
+       /* for portfolio page */ 
+ 
+.strip {
+    padding:0px;
+    background-color:#4aaaa5;
+    line-height:40px;
+    position:absolute;
+    bottom:10px;
+    width:230px;
+    
+    color:#ffffff;
+    text-align: center; 
+    text-size-adjust: auto;   
+} 
+.ip {
+    position:relative;
+    margin-right:30px;
+    margin-bottom:35px;
+    float:left;
+    padding:0px;
+}   
+.images {
+    margin:0;
+    position:relative;
+    float:left;
+    padding:0;
+    padding:10px 20px 10px 0;
+    width:240px;
+    height: 150px;
+} 
+
+
+ @media  screen and (max-width:980px)  {
+  /*  About Me */
+   #name {
+       height: 60px;
+       left:5%;
+    }     
+   #container   {
+       overflow:hidden;
+       margin-left:5%;
+       margin-top:20px;
+    }
+    header {
+       height:60px;
+       width:100%;       
+    } 
+    /*  Contact */
+    #name {
+        height: 60px;
+        left:5%;
+     }     
+    #clickables {
+        right:5%;
+    }   
+    a {
+        padding:0 20px;
+     }            
+    form {
+        box-sizing: border-box;
+        display:block;
+        margin-top:0em;
+        width:100;
+        line-height: 30px;
+        font-size: 20px;
+        padding-top:10px;
+        color:#363536e5;    
+     } 
+      #messagebox {
+         width:100%;
+         height:220px;
+         color:#363536e5;
+    }
+     header {
+        width:100%;
+        height:60px;       
+     }
+     .ip {
+       
+        margin-right:5px;
+        margin-bottom:20px;
+        width:250px;
+        height: 180px;
+        padding:0px;
+    }    
+       
+    .images {
+        margin:0;
+       
+        padding:0;
+        padding:10px 90px 10px 0;
+        
+    }  
+
+  @media  screen and (max-width:768px) {
+    header {
+        width:100%;       
+     }
+    #name {
+      width:30% ;
+      left:5%;
+     }
+    h1 {
+      font-size:30px;  
+     } 
+    #clickables  {
+        width:50%; 
+        margin:0 auto;   
+        height:32px; 
+        right:5%; 
+        float: right;    
+    } 
+    a {
+        padding:0 20px;
+     }            
+
+    #container   {
+        overflow:hidden;
+        width:90%;
+        margin-left:5%;
+        height: 720px;
+        margin-bottom:150px;
+      }
+      .strip {    
+        width:300px; 
+    }     
+      .ip {   
+        margin-right:20px;
+        margin-bottom:10px;
+        width:300px;
+        height: 200px;
+    } 
+    .images {    
+        padding:0;
+        margin:5px; 
+        width:300px;
+        height:200px;
+     }    
+    }    
+ @media screen and (max-width:640px)  {
+    header {
+        position:static;
+        margin:0;
+        width:100%;
+        height:130px;
+       
+    }
+    #name {
+       width:100%;
+       margin:0;
+       left:0%;
+         
+    }
+    #clickables  {
+       
+        width:100%; 
+        right:25%;  
+        height:32px;
+             
+    }   
+    #container   {
+       width:90%;
+       margin-left:5%;
+       overflow:hidden;
+       height:800px;
+    }
+    #picture {
+       width:150px;
+       height: 150px;
+       clear:both;
+    }   
+    .pa {
+      clear:both;
+    }
+    .strip {    
+        width:500px; 
+    }     
+      .ip {   
+        margin-right:20px;
+        margin-bottom:50px;
+        
+        width:500px;
+        height:350px;
+    } 
+    .images {    
+        padding:0;
+        margin:0px 5px 25px 0px; 
+        overflow:hidden;
+        width:450px;
+        height:220px;
+
+       
+       
+     }    
+ }    
+
+    
+   
+
+    
