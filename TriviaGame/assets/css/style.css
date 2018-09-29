@@ -1,0 +1,13 @@
+#wrapper {
+   background-image: url("../images/background.jpg");
+   height:780px ;
+}
+#firstScreen, #secondScreen, #tirdScreen {
+   width: 780px;
+   height: 800px;
+   margin:0 auto;
+   
+}
+#bottonStart {
+   margin-top: 50px;
+}

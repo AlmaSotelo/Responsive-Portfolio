@@ -1,0 +1,116 @@
+<!--  Trivia theme -  Latinamerican Famous Women
+   Qustions:
+     1. Eva Peron was the most powerful woman in:
+        a) Bolivia b) Argentina c) Mexico, 
+     2. She received the a Nobel Peace Prize:
+        a) Rigoberta Menchu  b) Mother Teresa  c) Gabriela Mistral
+     3. She was considered a traitor:
+        a) Maria Leopoldina  b) La Malinche  c) Dilma Rouseff
+     4. Radical artist, Political Activist, Icon:
+        a) Frida Kahlo b) Maria Felix  c) Lola Beltran, 
+     5. Movement that fights for the freedom of unfairly imprisoned.
+        a) show of Laura Bosso  b) Liberal group of Ingrid Betancourt  c) Damas de Blanco    
+        
+                     -- The pseudocode --
+
+STEP 1. set Time remaining to 60 min
+STEP 2. when click on 'start' button:
+          the screen changes to show:
+          Time remaining,
+          questions, and
+          optional answers
+          Time remaining starts counting down by whole seconds
+          while Time remaining is grater than 0 and 'Done' botton is not clicked, then:
+            Time remaining keeps counting down
+            For each question, compu reacts to an answer clicked:
+              showing a mark meaning that is the 'selectedAnswer'
+              keeps the last answer clicked as the only one and ingnore the past clicks,
+              save the last selected Answer por each question to compare and compute later.
+              comparing 'answer' to 'correctAnswer'
+              if 'answer' is equal to 'correctAnswer', then:
+                  Correct Answers increases 1
+              if 'answer' is different to 'pred-correctAnswer', then:
+                  Incorrect Answers increases 1    
+              if  an answer was not given, then:
+                  Unanswered increases 1
+STEP 3. the screen changes to:
+          The Time remaining and quiestions & answers desapears,
+          Now page shows:
+            All Done!! instead of the Time remaining,
+            Correct Answers:,
+            Incorrect Answers:,
+            Unanswered:   
+               
+        -- The Layout --               -->
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>Trivia Game</title>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          <link rel="stylesheet" type = "text/css" href="./assets/css/style.css">
+        
+        </head>
+        <body>
+          <div id= "wrapper">
+            <div id="firstScreen" class="card text-center">
+                <div class="card-header">
+                  <h1>Famous Latinamerican Women Trivia!!</h1>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">You will have 60 sec to answer 5 multiple choice questions</h5>
+                  <p class="card-text">If you finish before the time is out, just click DONE, results will be displayed at the end</p>
+                  <a id= "bottonStart" href="#" class="btn btn-primary">START</a>
+                </div>
+                <div class="card-footer text-muted">
+                  <h2>Good Luck!!</h2>
+                </div>
+              </div>
+            <div id="secondScreen" class="card text-center">
+              <div class="card-header">
+                <h1>Famous Latinamerican Women Trivia!!</h1>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Time remaining:<div id="display">60</div></h5>
+                <p class="card-text" class="questions">1. Eva Peron was the most powerful woman in:</p>
+                <div  href="#" data-question="0" data-answer="Bolivia" class="btn btn-primary options">Bolivia</div>
+                <div  href="#" data-question="0" data-answer="Argentina" class="btn btn-primary options" >Argentina</div>
+                <div href="#" data-question="0" data-answer="Mexico" class="btn btn-primary options" >Mexico</div><hr>
+                <p class="card-text" class="questions" >2. She received the a Nobel Peace Prize: </p>
+                <div  href="#" data-question="1" data-answer="Rigoberta_Menchu" class="btn btn-primary options" >Rigoberta Menchu</div>
+                <div  href="#" data-question="1" data-answer="Madre_Teresa" class="btn btn-primary options" >Madre Teresa</div>
+                <div  href="#" data-question="1" data-answer="Gabriela_Mistral" class="btn btn-primary options" >Gabriela Mistral</div><hr>
+                <p class="card-text" class="questions">3. She was considered a traitor: </p>
+                <div  href="#" data-question="2" data-answer="Maria_Leopoldina" class="btn btn-primary options" >Maria Leopoldina</div>
+                <div  href="#" data-question="2" data-answer="La_Malinche" class="btn btn-primary options" >La Malinche</div>
+                <div  href="#" data-question="2" data-answer="Dilma_Rouseff" class="btn btn-primary options" >Dilma Rouseff</div><hr>
+                <p  class="card-text" class="questions">4. Radical artist, Political Activist, Icon: </p>
+                <div href="#" data-question="3" data-answer="Frida_Kahlo" class="btn btn-primary options">Frida Kahlo</div>
+                <div href="#" data-question="3" data-answer="Maria_Felix" class="btn btn-primary options" >Maria Felix</div>
+                <div href="#" data-question="3" data-answer="Lola_Beltran" class="btn btn-primary options" >Lola Beltran</div><hr>
+                <p class="card-text" class="questions">5. Movement that fights for the freedom of unfairly imprisoned. </p>
+                <div href="#" data-question="4" data-answer="Show_de_Laura_Bosso" class="btn btn-primary options"  >Show de Laura Bosso</div>
+                <div href="#" data-question="4" data-answer="Liberal_group_of_Ingrid_Betancourt" class="btn btn-primary options" >Liberal group of Ingrid Betancourt</div>
+                <div href="#" data-question="4" data-answer="Las_Damas_de_Blanco" class="btn btn-primary options" >Las Damas de Blanco</div>
+              </div>
+              <div class="card-footer text-muted">
+                <a id="bottonDone" href="#" class="btn btn-primary">DONE</a>
+              </div>
+            </div>
+            <div id="tirdScreen" class="card text-center">
+              <div class="card-header">
+                <h1>Famous Latinamerican Women Trivia!!</h1>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">All Done!!</h5>
+                <p class="card-text">Correct Answers:<span id="correctAnswers"></span></p>
+                <p class="card-text">Incorrect Answers:<span id="incorrectAnswers"></span></p>
+                <p class="card-text">Unanswered:<span id="unanswered"></span></p>
+            </div>
+          </div>
+        </body>
+        <script type = "text/javascript" src="./assets/javascript/app.js"></script>
+        </html>      
