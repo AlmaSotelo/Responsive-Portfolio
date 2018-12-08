@@ -16,9 +16,11 @@ body {
     border-bottom: 2px solid #cccccc;    
    /* to acomodate layout aparience*/
     height: 70px; 
-       
  }
-
+ html body{
+    height: 100%;
+    width: 100%;
+ }
  #name {
      /* required by instruccions */   
     background-color:#4aaaa5;
@@ -87,7 +89,7 @@ body {
     /* preparing to add padding without moving the given size */
     box-sizing: border-box;         
     /* given size to get aparience closer to the model */
-    height: 600px;    
+    height: 770px;    
     /* it is needed to put it in front of pattern but I don't yet understand why */
     position:relative;
     /* to have space between the border and the inside contain */
